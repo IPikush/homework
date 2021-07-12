@@ -20,15 +20,19 @@ public class Tasks {
         return result;
     }
     public static boolean taskTwo(){
-        //это задание (на проверку числа Армстронга) еще не сделала
         boolean result=true;
-        System.out.println("Please, enter your number and press Enter");
+        int newNum=0;
+        int sum=0;
         Scanner in = new Scanner(System.in);
-        String number=in.nextLine();
-        //String[] newArray=number.split("");
-        //for(int i=0;i<newArray.length;i++){
-
-
+        System.out.println("Enter number to check if it is Armstrong number");
+        String num=in.nextLine();
+        String[] newArr=num.split("");
+        for(int i=0;i< newArr.length;i++){
+            newNum=Integer.parseInt(newArr[i]);
+            sum= (int) (sum+Math.pow(newNum,newArr.length));
+        }if(Integer.parseInt(num)==sum){
+            result=true;
+        }else{result=false;}
         return result;
     }
     public static String taskThree(){
